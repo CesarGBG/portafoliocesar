@@ -1,5 +1,7 @@
 import streamlit as st
 from PIL import Image
+from urllib.request import urlopen
+from PIL import Image
 
 # Configuración general de la página
 st.set_page_config(
@@ -32,7 +34,8 @@ st.markdown(
 )
 
 # Imagen de perfil
-imagen = Image.open("foto.jpg")
+image_url = "https://github.com/CesarGBG/portafoliocesar/blob/main/foto.jpg"
+imagen = Image.open(urlopen(image_url))
 st.image(imagen, caption="César Bueno", use_column_width=True)
 
 # Título y descripción
